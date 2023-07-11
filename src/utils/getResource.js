@@ -1,7 +1,7 @@
 import formatResource from "./formatResource"
 import getToken from "./getToken";
-// Preguntar a Pierre sobre funciones anonimas y funciones flecha al exportar
-export default async function (input) {
+
+export default async function getResource (input) {
     // Need to get token at time of request, cause it lasts a short time
     const token = await getToken()
 

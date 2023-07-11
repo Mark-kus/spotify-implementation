@@ -4,7 +4,7 @@ const CLIENT_SECRET = import.meta.env.VITE_CLIENT_SECRET
 
 const TOKEN_ENDPOINT = "https://accounts.spotify.com/api/token"
 
-export default async function () {
+export default async function getToken () {
     // fetch parameters, wanted by Spotify
     const authParameters = {
         method: "POST",

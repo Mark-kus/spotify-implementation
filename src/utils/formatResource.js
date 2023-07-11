@@ -1,4 +1,4 @@
-export default function (data, searchType) {
+export default function formatResource (data, searchType) {
 
     const formatedResource = {
         name: null,
