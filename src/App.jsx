@@ -1,7 +1,7 @@
 import './App.css'
 import { useState } from 'react'
 import getResource from './utils/getResource'
-import { Player } from "./components/player";
+import Player from "./components/player";
 import spotify from "./assets/spotify.svg";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <div className='container'>
-        <iframe style={{ "borderRadius": '12px' }} src="https://open.spotify.com/embed/track/7qiZfU4dY1lWllzX7mPBI3?utm_source=generator" width="100%" height="352" frameBorder="0" allowFullScreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe src="https://open.spotify.com/embed/playlist/7tmqxXppNtc5XvWsBHUcFA?utm_source=generator" width="100%" height="355" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
         {data?.name ?
           <div className='spotifyResults'>
