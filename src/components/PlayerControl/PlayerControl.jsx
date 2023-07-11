@@ -1,59 +1,64 @@
 import './PlayerControl.css'
 import { useState } from "react"
+import MusicBar from '../MusicBar/MusicBar'
 
 export default function PlayerControl({ resource }) {
 
     // Important: Some tracks doesn't have preview_url, so they won't play
+    const tracks = resource.tracks.map(t => t.track)
     const [currentIndex, setCurrentIndex] = useState(0)
-    const [tracks, setTracks] = useState(resource.tracks.map(t => t.track))
+    const [isPlaying, setIsPlaying] = useState(false)
 
     const [audio, setAudio] = useState(new Audio(tracks[0].preview_url))
 
-    const [isPlaying, setIsPlaying] = useState(false)
-    const [trackProgress, setTrackProgress] = useState(0)
-
-    const playAudio = () => setIsPlaying(true)
-    const pauseAudio = () => setIsPlaying(false)
+    const toggleAudioPlay = () => {
+        if (isPlaying) {
+            audio.pause()
+            setIsPlaying(false)
+        } else {
+            audio.play()
+            setIsPlaying(true)
+        }
+    }
 
     const nextTrack = () => {
         if (currentIndex >= tracks.length) return
+        setCurrentIndex((currentIndex) => currentIndex + 1)
 
         audio.pause()
         const track = tracks[currentIndex + 1]
+        const nextMusic = new Audio(track.preview_url)
 
-        setCurrentIndex((currentIndex) => currentIndex + 1)
-        if (track?.preview_url) setAudio(new Audio(track.preview_url))
-        if (!isPlaying) setIsPlaying(true)
+        if (track?.preview_url) {
+            nextMusic.play()
+            setAudio(nextMusic)
+            setIsPlaying(true)
+        }
     }
 
     const previousTrack = () => {
         if (currentIndex <= 0) return
+        setCurrentIndex((currentIndex) => currentIndex - 1)
 
         audio.pause()
         const track = tracks[currentIndex - 1]
+        const previousMusic = new Audio(track.preview_url)
 
-        setCurrentIndex((currentIndex) => currentIndex - 1)
-        if (track?.preview_url) setAudio(new Audio(track.preview_url))
-        if (!isPlaying) setIsPlaying(true)
+        if (track?.preview_url) {
+            previousMusic.play()
+            setAudio(previousMusic)
+            setIsPlaying(true)
+        }
     }
-
-    setInterval(() => {
-        // {audio.ended && currentIndex < tracks.length ? nextTrack() : null}
-        setTrackProgress((audio.currentTime / audio.duration) * 100)
-    }, 1000);
-
-    { isPlaying ? audio.play() : audio.pause() }
 
     return (
         <>
-            <div className='progressBar'>
-                <div className='backProgressBar'>-</div>
-                <div className='frontProgressBar' style={{ width: `${trackProgress}%` }} >-</div>
+            <MusicBar music={audio} />
+            <div className='music-controls'>
+                <button onClick={previousTrack}>{"<<"}</button>
+                <button onClick={toggleAudioPlay}>{isPlaying ? "||" : ">"}</button>
+                <button onClick={nextTrack} >{">>"}</button>
             </div>
-            <button onClick={previousTrack}>Previous</button>
-            <button onClick={playAudio} >Play</button>
-            <button onClick={pauseAudio} >Pause</button>
-            <button onClick={nextTrack} >Next</button>
         </>
     )
 }
