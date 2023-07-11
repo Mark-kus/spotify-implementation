@@ -1,0 +1,46 @@
+.embedSpotify {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2f2f2f;
+  border-radius: 9px;
+  flex-direction: column;
+}
+
+.embedSpotify iframe {
+  border: 0;
+  border-radius: 9px;
+}
+
+.input-spotify-link {
+  color: #2f2f2f;
+  background-color: #fafafa;
+  padding: 10px;
+  width: 600px;
+  border: 0;
+  border-radius: 9px;
+  z-index: 2;
+}
+
+/* --------------------------------------- */
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1.5rem;
+}
+
+.spotify-logo {
+  position: absolute;
+  right: 5%;
+}
+
+.spotifyResults {
+  background-color: #131313;
+
+  display: flex;
+  width: 90%;
+}
