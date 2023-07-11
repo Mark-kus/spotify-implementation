@@ -1,9 +1,10 @@
-export default function formatResource (data, searchType) {
+export default function formatResource(data, searchType) {
 
     const formatedResource = {
         name: null,
         owner: null,
         image: null,
+        tracks: [],
     }
 
     // Each type gives us the data in different ways
@@ -18,6 +19,7 @@ export default function formatResource (data, searchType) {
             formatedResource.name = data.name
             formatedResource.owner = data.owner.display_name
             formatedResource.image = data.images[0].url
+            formatedResource.tracks = [...data.tracks.items]
             return formatedResource
 
         case "shows":

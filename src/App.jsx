@@ -5,11 +5,11 @@ import Player from "./components/Player";
 import spotify from "./assets/spotify.svg";
 
 function App() {
-  const [data, setData] = useState()
+  const [resource, setResource] = useState()
 
   async function search(e) {
     // Request the resource
-    setData(await getResource(e.target.value))
+    setResource(await getResource(e.target.value))
   }
 
   return (
@@ -17,15 +17,15 @@ function App() {
       <div className='container'>
       <iframe src="https://open.spotify.com/embed/playlist/7tmqxXppNtc5XvWsBHUcFA?utm_source=generator" width="100%" height="355" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
-        {data?.name ?
+        {resource?.name ?
           <div className='spotifyResults'>
-            <img src={data.image} alt="Imagen de portada del recurso" width={300} />
+            <img src={resource.image} alt="Imagen de portada del recurso" width={300} />
             <div>
-              <h2>{data.name}</h2>
-              <p>{data.owner}</p>
+              <h2>{resource.name}</h2>
+              <p>{resource.owner}</p>
             </div>
             <img src={spotify} alt="spotify logo" width={24} className='spotify-logo' />
-            <Player />
+            <Player tracks={resource.tracks} />
           </div>
           : null}
 

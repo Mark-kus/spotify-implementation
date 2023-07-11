@@ -1,5 +1,5 @@
-export default function Player() {
-
+export default function Player({tracks}) {
+console.log(tracks);
     return (
         <div className="screen-container">
 
