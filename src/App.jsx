@@ -1,6 +1,7 @@
 import './App.css'
 import { useState } from 'react'
 import getResource from './utils/getResource'
+import { Player } from "./components/player";
 import spotify from "./assets/spotify.svg";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
               <p>{data.owner}</p>
             </div>
             <img src={spotify} alt="spotify logo" width={24} className='spotify-logo' />
+            <Player />
           </div>
           : null}
 
