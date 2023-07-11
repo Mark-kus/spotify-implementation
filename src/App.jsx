@@ -1,7 +1,7 @@
 import './App.css'
 import { useState } from 'react'
 import getResource from './utils/getResource'
-import Player from "./components/player";
+import Player from "./components/Player";
 import spotify from "./assets/spotify.svg";
 
 function App() {
