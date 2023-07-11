@@ -3,14 +3,14 @@ import getToken from "./getToken";
 
 export default async function getResource (input) {
     // Need to get token at time of request, cause it lasts a short time
-    const token = await getToken()
+    const {access_token} = await getToken()
 
     // fetch parameters, wanted by Spotify
     const searchParameters = {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${token}`
+            "Authorization": `Bearer ${access_token}`
         }
     }
 
