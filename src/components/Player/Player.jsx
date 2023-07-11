@@ -1,29 +1,14 @@
 import "./Player.css"
-import { useState } from "react"
 import spotify from "../../assets/spotify.svg";
+import PlayerControl from "../PlayerControl/PlayerControl";
 
 export default function Player({ resource }) {
-
-    const [currentTrack, setCurrentTrack] = useState(resource.tracks[0].track)
-    const [currentIndex, setCurrentIndex] = useState(0)
-    const [tracks, setTracks] = useState(resource.tracks.map(t => t.track))
-
-    const [isPlaying, setIsPlaying] = useState(false)
-    const [trackProgress, setTrackProgress] = useState(0)
-    const audioSrc = new Audio(currentTrack.preview_url)
-
-    const playAudio = () => audioSrc.play()
-    const pauseAudio = () => audioSrc.pause()
-    
 
 
     return (
         <div className="screen-container">
 
-            <button>Previous</button>
-            <button onClick={playAudio} >Play</button>
-            <button onClick={pauseAudio} >Pause</button>
-
+            <PlayerControl resource={resource} />
 
             <div className="right-player-body" >
 
