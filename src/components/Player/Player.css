@@ -1,6 +1,3 @@
-  .spotifyResults {
-    background-color: #131313;
-  
-    display: flex;
-    width: 90%;
-  }
+.resource-card {
+  display: flex;
+}

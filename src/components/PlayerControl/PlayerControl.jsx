@@ -2,10 +2,9 @@ import './PlayerControl.css'
 import { useState } from "react"
 import MusicBar from '../MusicBar/MusicBar'
 
-export default function PlayerControl({ resource }) {
+export default function PlayerControl({ tracks }) {
 
     // Important: Some tracks doesn't have preview_url, so they won't play
-    const tracks = resource.tracks.map(t => t.track)
     const [currentIndex, setCurrentIndex] = useState(0)
     const [isPlaying, setIsPlaying] = useState(false)
 
