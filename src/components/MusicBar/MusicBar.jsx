@@ -1,4 +1,4 @@
-import "./MusicBar.css"
+import "./MusicBar.css";
 import { useEffect, useState } from "react";
 
 export default function MusicBar({ music }) {
