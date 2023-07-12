@@ -15,7 +15,7 @@ export default function formatResource(data, searchType) {
                 name: null,
                 preview_url: data.preview_url,
                 author: data.artists.map(artist => {
-                    return { name: artist.name }
+                    return artist.name
                 })
             }
 
@@ -33,7 +33,7 @@ export default function formatResource(data, searchType) {
                     name: track.track.name,
                     preview_url: track.track.preview_url,
                     author: track.track.artists.map(artist => {
-                        return { name: artist.name }
+                        return artist.name
                     })
                 }
             })
