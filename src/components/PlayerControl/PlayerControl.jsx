@@ -6,11 +6,14 @@ export default function PlayerControl({ tracks }) {
     // Important: Some tracks doesn't have preview_url, so they won't play
     const [trackProgress, setTrackProgress] = useState(0)
     const [currentIndex, setCurrentIndex] = useState(0)
+    
     const [isPlaying, setIsPlaying] = useState(false)
+
     const [music, setMusic] = useState(new Audio(tracks[0].preview_url))
     const intervalId = useRef(null)
 
     const createBarInterval = (audio) => {
+        // This Interval will set a percentage of the time playing / total duration of the song
         return setInterval(() => {
             const progress = (audio.currentTime / audio.duration) * 100
             setTrackProgress(progress)
@@ -19,10 +22,12 @@ export default function PlayerControl({ tracks }) {
 
     const toggleMusicPlay = () => {
         if (isPlaying) {
+            // Pauses music and stops the interval
             music.pause()
             clearInterval(intervalId.current)
             setIsPlaying(false)
         } else {
+            // Plays music and starts interval
             music.play()
             intervalId.current = createBarInterval(music)
             setIsPlaying(true)
@@ -33,13 +38,17 @@ export default function PlayerControl({ tracks }) {
         if (currentIndex >= tracks.length) return
         setCurrentIndex((currentIndex) => currentIndex + 1)
 
+        // First pauses the music and ends the interval
         music.pause()
         clearInterval(intervalId.current)
 
+        // Sets the next song
         const track = tracks[currentIndex + 1]
-        const nextMusic = new Audio(track.preview_url)
 
+        // If the song can be played, it does and resets the interval
         if (track?.preview_url) {
+            const nextMusic = new Audio(track.preview_url)
+
             nextMusic.play()
             setMusic(nextMusic)
             setTrackProgress(0)
@@ -52,13 +61,17 @@ export default function PlayerControl({ tracks }) {
         if (currentIndex <= 0) return
         setCurrentIndex((currentIndex) => currentIndex - 1)
 
+        // First pauses the music and ends the interval
         music.pause()
         clearInterval(intervalId.current)
 
+        // Sets the previous song
         const track = tracks[currentIndex - 1]
-        const previousMusic = new Audio(track.preview_url)
 
+        // If the song can be played, it does and resets the interval
         if (track?.preview_url) {
+            const previousMusic = new Audio(track.preview_url)
+
             previousMusic.play()
             setMusic(previousMusic)
             setTrackProgress(0)
