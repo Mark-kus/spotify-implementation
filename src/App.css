@@ -22,3 +22,7 @@
   border-radius: 9px;
   z-index: 2;
 }
+/* ----------------------- */
+.container > div {
+  display: flex;
+}

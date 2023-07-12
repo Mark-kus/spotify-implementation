@@ -14,16 +14,18 @@ function App() {
   return (
     <>
       <div className='container'>
-      <iframe src="https://open.spotify.com/embed/playlist/7tmqxXppNtc5XvWsBHUcFA?utm_source=generator" width="100%" height="355" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
-        {resource?.name ?
+        <div>
+          <iframe style={{ "border-radius": "12px" }} src="https://open.spotify.com/embed/playlist/7tmqxXppNtc5XvWsBHUcFA?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          {resource?.name ?
             <Player resource={resource} />
-          : null}
+            : null}
+        </div>
 
         <div key={1} className='embedSpotify'>
           <input
             placeholder='Coloca aquí el link'
             className='input-spotify-link'
+            value="https://open.spotify.com/playlist/7tmqxXppNtc5XvWsBHUcFA?si=70e6fd7632394ccb"
             onKeyDown={
               (e) => {
                 if (e.key === "Enter" && e.target.value.length > 0) {
