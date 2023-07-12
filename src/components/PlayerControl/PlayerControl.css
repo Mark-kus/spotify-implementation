@@ -1,3 +1,27 @@
 .music-controls button {
     width: calc(100%/3);
 }
+
+.progressBar {
+    position: relative;
+}
+
+.backProgressBar,
+.frontProgressBar {
+    color: transparent;
+    height: 8px;
+    border-radius: 16px;
+}
+
+.backProgressBar {
+    background-color: gray;
+
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.frontProgressBar {
+    background-color: black;
+    transition: width linear;
+}
