@@ -1,3 +1,60 @@
+.container {
+  background-color: rgb(41, 44, 70);
+  border-radius: 8px;
+
+  height: 352px;
+  width: 100%;
+}
+
+/* Resource data, such as name and images */
+
+.container>div {
+  display: flex;
+  align-items: center;
+
+  margin: 0 8px;
+}
+
+.resource-logo {
+  border-radius: 8px;
+  box-shadow: 2px;
+}
+
+.spotify-logo {
+  align-self: flex-start;
+  justify-self: end;
+}
+
 .resource-card {
   display: flex;
+}
+
+/* Resource track list */
+
+.track-list {
+  display: flex;
+  flex-direction: column;
+
+  overflow: scroll;
+  height: 100%;
+
+}
+
+.track-container {
+  display: flex;
+  width: 100%;
+}
+
+.track-container>p {
+  margin: 0 2px;
+}
+
+.track-info {
+  line-height: 0.25;
+}
+
+/* .track-info p:first-child {} */
+
+.track-info p:last-child {
+  font-size: x-small;
 }

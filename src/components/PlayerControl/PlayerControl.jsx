@@ -1,4 +1,6 @@
 import MusicBar from '../MusicBar/MusicBar'
+import previous from "../../assets/previous.svg";
+
 import './PlayerControl.css'
 import { useRef, useState } from "react"
 
@@ -90,7 +92,9 @@ export default function PlayerControl({ tracks }) {
         <>
             <MusicBar trackProgress={trackProgress} />
             <div className='music-controls'>
-                <button onClick={previousTrack}>{"<<"}</button>
+                <button onClick={previousTrack}>
+                    <img src={previous} alt="previous-track" />
+                </button>
                 <button onClick={toggleMusicPlay}>{isPlaying ? "||" : ">"}</button>
                 <button onClick={nextTrack} >{">>"}</button>
             </div>

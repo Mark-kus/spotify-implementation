@@ -8,7 +8,7 @@ export default function Player({ resource }) {
         <div className="container">
 
             <div className="resource-card">
-                <img src={resource.image} alt="Imagen de portada del recurso" width={200} />
+                <img src={resource.image} alt="Imagen de portada del recurso" width={156} className="resource-logo" />
                 <div>
                     <h2>{resource.name}</h2>
                     <p>{resource.owner}</p>
@@ -22,9 +22,17 @@ export default function Player({ resource }) {
             }
 
             {resource.tracks.length > 1 &&
-                <div>
+                <div className="track-list">
                     {resource.tracks.map((track, i) => {
-                        return <p key={i}>{track.name}</p>
+                        return (
+                            <div className="track-container" key={i}>
+                                <p>{i + 1}</p>
+                                <div className="track-info">
+                                    <p>{track.name}</p>
+                                    <p>{track.author.join(", ")}</p>
+                                </div>
+                            </ div>
+                        )
                     })}
                 </div>
             }
