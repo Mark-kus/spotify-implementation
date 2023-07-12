@@ -3,7 +3,7 @@ import spotify from "../../assets/spotify.svg";
 import PlayerControl from "../PlayerControl/PlayerControl";
 
 export default function Player({ resource }) {
-    const tracks = resource.tracks.map(t => t.track)
+    console.log(resource);
     return (
         <div className="container">
 
@@ -16,10 +16,10 @@ export default function Player({ resource }) {
                 <img src={spotify} alt="spotify logo" width={24} className='spotify-logo' />
             </div>
 
-            <PlayerControl tracks={tracks} />
+            <PlayerControl tracks={resource.tracks} />
 
             <div>
-                {tracks.map((track, i) => {
+                {resource.tracks.map((track, i) => {
                     return <p key={i}>{track.name}</p>
                 })}
             </div>

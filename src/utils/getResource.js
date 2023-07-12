@@ -1,9 +1,9 @@
 import formatResource from "./formatResource"
 import getToken from "./getToken";
 
-export default async function getResource (input) {
+export default async function getResource(input) {
     // Need to get token at time of request, cause it lasts a short time
-    const {access_token} = await getToken()
+    const { access_token } = await getToken()
 
     // fetch parameters, wanted by Spotify
     const searchParameters = {
@@ -21,8 +21,10 @@ export default async function getResource (input) {
 
     // NOTE: The type to insert in the API request, should be in plural
     const searchType = url.slice(0, url.indexOf("/")) + "s"
-    const searchId = url.slice(url.indexOf("/") + 1, url.indexOf("?"))
 
+    // It may not include the ?, so just in case:
+    const endOfResource = url.includes("?") ? url.indexOf("?") : url.length
+    const searchId = url.slice(url.indexOf("/") + 1, endOfResource)
 
     // So, we now get to fetch the data
     const response = await fetch(`https://api.spotify.com/v1/${searchType}/${searchId}`, searchParameters)
