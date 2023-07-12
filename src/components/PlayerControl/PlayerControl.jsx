@@ -1,3 +1,4 @@
+import MusicBar from '../MusicBar/MusicBar'
 import './PlayerControl.css'
 import { useRef, useState } from "react"
 
@@ -6,7 +7,7 @@ export default function PlayerControl({ tracks }) {
     // Important: Some tracks doesn't have preview_url, so they won't play
     const [trackProgress, setTrackProgress] = useState(0)
     const [currentIndex, setCurrentIndex] = useState(0)
-    
+
     const [isPlaying, setIsPlaying] = useState(false)
 
     const [music, setMusic] = useState(new Audio(tracks[0].preview_url))
@@ -54,6 +55,8 @@ export default function PlayerControl({ tracks }) {
             setTrackProgress(0)
             intervalId.current = createBarInterval(nextMusic)
             if (!isPlaying) setIsPlaying(true)
+        } else {
+            setIsPlaying(false)
         }
     }
 
@@ -77,16 +80,15 @@ export default function PlayerControl({ tracks }) {
             setTrackProgress(0)
             intervalId.current = createBarInterval(previousMusic)
             if (!isPlaying) setIsPlaying(true)
+        } else {
+            setIsPlaying(false)
         }
     }
 
 
     return (
         <>
-            <div className='progressBar'>
-                <div className='backProgressBar'>-</div>
-                <div className='frontProgressBar' style={{ width: `${trackProgress}%` }} >-</div>
-            </div>
+            <MusicBar trackProgress={trackProgress} />
             <div className='music-controls'>
                 <button onClick={previousTrack}>{"<<"}</button>
                 <button onClick={toggleMusicPlay}>{isPlaying ? "||" : ">"}</button>
