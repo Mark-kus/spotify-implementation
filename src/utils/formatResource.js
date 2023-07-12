@@ -13,7 +13,10 @@ export default function formatResource(data, searchType) {
             // The track property just holds the preview_url
             const formatedTrack = {
                 name: null,
-                preview_url: data.preview_url
+                preview_url: data.preview_url,
+                author: data.artists.map(artist => {
+                    return { name: artist.name }
+                })
             }
 
             formatedResource.name = data.name
@@ -28,7 +31,10 @@ export default function formatResource(data, searchType) {
             const formatedTracks = data.tracks.items.map(track => {
                 return {
                     name: track.track.name,
-                    preview_url: track.track.preview_url
+                    preview_url: track.track.preview_url,
+                    author: track.track.artists.map(artist => {
+                        return { name: artist.name }
+                    })
                 }
             })
 
