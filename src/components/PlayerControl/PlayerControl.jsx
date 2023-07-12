@@ -8,9 +8,9 @@ export default function PlayerControl({ tracks }) {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [isPlaying, setIsPlaying] = useState(false)
 
-    const [music, setAudio] = useState(new Audio(tracks[0].preview_url))
+    const [music, setMusic] = useState(new Audio(tracks[0].preview_url))
 
-    const toggleAudioPlay = () => {
+    const toggleMusicPlay = () => {
         if (isPlaying) {
             music.pause()
             setIsPlaying(false)
@@ -30,8 +30,8 @@ export default function PlayerControl({ tracks }) {
 
         if (track?.preview_url) {
             nextMusic.play()
-            setAudio(nextMusic)
-            setIsPlaying(true)
+            setMusic(nextMusic)
+            if (!isPlaying) setIsPlaying(true)
         }
     }
 
@@ -45,8 +45,8 @@ export default function PlayerControl({ tracks }) {
 
         if (track?.preview_url) {
             previousMusic.play()
-            setAudio(previousMusic)
-            setIsPlaying(true)
+            setMusic(previousMusic)
+            if (!isPlaying) setIsPlaying(true)
         }
     }
 
@@ -55,7 +55,7 @@ export default function PlayerControl({ tracks }) {
             <MusicBar music={music} />
             <div className='music-controls'>
                 <button onClick={previousTrack}>{"<<"}</button>
-                <button onClick={toggleAudioPlay}>{isPlaying ? "||" : ">"}</button>
+                <button onClick={toggleMusicPlay}>{isPlaying ? "||" : ">"}</button>
                 <button onClick={nextTrack} >{">>"}</button>
             </div>
         </>
