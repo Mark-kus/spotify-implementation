@@ -16,13 +16,18 @@ export default function Player({ resource }) {
                 <img src={spotify} alt="spotify logo" width={24} className='spotify-logo' />
             </div>
 
-            <PlayerControl tracks={resource.tracks} />
 
-            <div>
-                {resource.tracks.map((track, i) => {
-                    return <p key={i}>{track.name}</p>
-                })}
-            </div>
+            {resource.tracks.length > 0 &&
+                <PlayerControl tracks={resource.tracks} />
+            }
+
+            {resource.tracks.length > 1 &&
+                <div>
+                    {resource.tracks.map((track, i) => {
+                        return <p key={i}>{track.name}</p>
+                    })}
+                </div>
+            }
 
         </div>
     )

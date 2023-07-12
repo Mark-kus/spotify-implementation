@@ -40,12 +40,12 @@ export default function formatResource(data, searchType) {
             return formatedResource
 
         case "users":
-            // The tracks property holds an empty object
+            // The tracks property holds an empty array
             // If there is no image, gives a default cdn
             formatedResource.name = data.display_name
             formatedResource.owner = data.publisher
             formatedResource.image = data.images[data.images.length - 1].url || "https://i.scdn.co/image/ab6761610000e5eb55d39ab9c21d506aa52f7021"
-            formatedResource.tracks = [{ name: null, preview_url: null }]
+            formatedResource.tracks = []
 
             return formatedResource
 
