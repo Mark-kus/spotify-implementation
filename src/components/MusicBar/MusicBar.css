@@ -1,5 +1,8 @@
 .progressBar {
+    z-index: 10;
     position: relative;
+    width: 330px;
+    margin-right: 16px;
 }
 
 .backProgressBar,
@@ -12,11 +15,12 @@
 .backProgressBar {
     background-color: gray;
 
-    position: absolute;
-    width: 100%;
-    z-index: -1;
+    position: static;
+    width: 345px;
+    z-index: 1;
 }
 
 .frontProgressBar {
     background-color: black;
+    z-index: 2;
 }

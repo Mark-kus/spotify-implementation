@@ -1,6 +1,7 @@
 .music-controls {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .music-controls button {
