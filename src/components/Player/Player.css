@@ -2,7 +2,7 @@
   background-color: rgb(41, 44, 70);
   border-radius: 8px;
 
-  height: 352px;
+  max-height: 352px;
   width: 100%;
 }
 
@@ -11,7 +11,6 @@
 .container>div {
   display: flex;
   align-items: center;
-
 }
 
 .resource-logo {
@@ -22,18 +21,19 @@
 }
 
 .spotify-logo {
-  margin: 16px 16px 0 0; 
+  position: absolute;
+  top: 16px;
+  right: 16px;
 }
 
 .resource-card {
+  position: relative;
   display: flex;
-
   line-height: 0.75;
 }
 
 .controls {
   margin: 0 0 0 auto;
-  height: 150px;
 
   display: flex;
   flex-direction: column;
@@ -41,15 +41,33 @@
   justify-content: space-between;
 }
 
+.controles-musicales {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+}
+
+.link-to {
+  color: white;
+  text-decoration: none;
+}
+
+.link-to:hover {
+  text-decoration: underline;
+}
+
 /* Resource track list */
 
 .track-list {
+  background-color: rgb(33, 36, 56);
+
   display: flex;
   flex-direction: column;
 
   overflow: scroll;
-  height: 100%;
+  height: 50%;
 
+  overflow-x: hidden;
 }
 
 .track-container {
@@ -69,4 +87,9 @@
 
 .track-info p:last-child {
   font-size: x-small;
+}
+
+.mute {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
 }

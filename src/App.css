@@ -23,6 +23,6 @@
   z-index: 2;
 }
 /* ----------------------- */
-.container > div {
+.main-container > div {
   display: flex;
 }

@@ -41,7 +41,7 @@ function App() {
 
   return (
     <>
-      <div className='container'>
+      <div className='main-container'>
           <iframe style={{ "border-radius": "12px" }} src="https://open.spotify.com/embed/playlist/7tmqxXppNtc5XvWsBHUcFA?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         <div>
           {resource?.name ?
@@ -54,7 +54,6 @@ function App() {
           <input
             placeholder='Coloca aquí el link'
             className='input-spotify-link'
-            value="https://open.spotify.com/playlist/7tmqxXppNtc5XvWsBHUcFA?si=23b6e1a4570044e1"
             onKeyDown={
               (e) => {
                 if (e.key === "Enter" && e.target.value.length > 0) {
