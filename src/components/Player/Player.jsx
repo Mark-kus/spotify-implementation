@@ -11,6 +11,11 @@ export default function Player({ resource }) {
                 <div>
                     <a className="link-to" href={resource.url}><h2>{resource.name}</h2></a>
                     <p className="mute">{resource.owner}</p>
+                    {resource.genres.map((genre, i) => {
+                        return (
+                            <span key={i} className="genre mute">{genre}</span>
+                        )
+                    })}
                 </div>
 
                 <div className="controls">
