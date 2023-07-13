@@ -1,5 +1,4 @@
 import MusicBar from '../MusicBar/MusicBar'
-import previous from "../../assets/previous.svg";
 
 import './PlayerControl.css'
 import { useRef, useState } from "react"
@@ -92,11 +91,13 @@ export default function PlayerControl({ tracks }) {
         <>
             <MusicBar trackProgress={trackProgress} />
             <div className='music-controls'>
-                <button onClick={previousTrack}>
-                    <img src={previous} alt="previous-track" />
-                </button>
-                <button onClick={toggleMusicPlay}>{isPlaying ? "||" : ">"}</button>
-                <button onClick={nextTrack} >{">>"}</button>
+                <div>
+                    <button onClick={previousTrack}><svg fill='gray' role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon"><path d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z"></path></svg></button>
+
+                    <button onClick={nextTrack} ><svg fill='gray' role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon"><path d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z"></path></svg></button>
+
+                    <button onClick={toggleMusicPlay}>{isPlaying ? <svg fill='white' role="img" height="32" width="32" aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon"><path d="M5.7 3a.7.7 0 0 0-.7.7v16.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V3.7a.7.7 0 0 0-.7-.7H5.7zm10 0a.7.7 0 0 0-.7.7v16.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V3.7a.7.7 0 0 0-.7-.7h-2.6z"></path></svg> : <svg fill='white' role="img" height="48" width="48" aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon"><path d="M1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12zm8.75-4.567a.5.5 0 0 0-.75.433v8.268a.5.5 0 0 0 .75.433l7.161-4.134a.5.5 0 0 0 0-.866L9.75 7.433z"></path></svg>}</button>
+                </div>
             </div>
         </>
     )

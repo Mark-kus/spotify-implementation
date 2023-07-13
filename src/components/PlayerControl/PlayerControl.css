@@ -1,5 +1,11 @@
+.music-controls {
+    display: flex;
+    justify-content: space-between;
+}
+
 .music-controls button {
-    width: calc(100%/3);
+    background: none;
+    border: none;
 }
 
 .progressBar {
