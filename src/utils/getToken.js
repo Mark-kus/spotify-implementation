@@ -16,5 +16,6 @@ export default async function getToken () {
 
     // We need this access token from our APP to use de Spotify API
     const response = await fetch(TOKEN_ENDPOINT, authParameters)
-    return await response.json()
+    const tokenData = await response.json()
+    return tokenData.access_token
 }
