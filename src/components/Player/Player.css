@@ -27,7 +27,9 @@
   margin: 16px;
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
-  width: 22%;
+  width: 20%;
+  max-width: 75px;
+  height: auto;
   border-radius: 9px;
 }
 
@@ -45,13 +47,13 @@
 .resource-card {
   position: relative;
   display: flex;
-  line-height: 0.5;
+  line-height: 0.75;
   font-size: small;
 }
 
 .top-card {
   position: relative;
-  top: -6px;
+  top: -10px;
   align-items: flex-start;
 }
 
