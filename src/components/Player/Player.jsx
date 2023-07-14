@@ -1,22 +1,26 @@
 import "./Player.css"
 import PlayerControl from "../PlayerControl/PlayerControl";
 import msConverter from "../../utils/msConverter";
+import FollowButton from "../FollowButton/FollowButton";
 
 export default function Player({ resource }) {
+    console.log(resource);
     return (
         <div className="container">
 
             <div className="resource-card">
                 <img src={resource.image} alt="Imagen de portada del recurso" width={156} className="resource-logo" />
                 <div className="top-card">
-                    <a className="link-to" href={resource.url}><h2>{resource.name}</h2></a>
-                    <p className="mute">{resource.owner}</p>
+                    <a className="link-to" target="_blank" href={resource.url}><h2>{resource.name}</h2></a>
+                    {typeof resource.owner === "number" ? <p className="mute">{resource.owner}</p> : <FollowButton href={resource.url} qty={resource.owner} />}
+                    <div className="genres">
                     {resource.genres.map((genre, i) => {
                         const shownGenre = genre.slice(0, 1).toUpperCase() + genre.slice(1)
                         return (
                             <span key={i} className="genre mute">{shownGenre}</span>
                         )
                     })}
+                    </div>
                 </div>
 
                 <div className="controls">

@@ -10,12 +10,12 @@ export default function formatResource(data, searchType) {
         type: null,
         genres: [],
     }
-
+console.log(data);
     // Each type gives us the data in different ways
     switch (searchType) {
         case "tracks":
 
-        const formatedTrack = {
+            const formatedTrack = {
                 name: null,
                 preview_url: data.preview_url,
                 author: data.artists.map(artist => {
@@ -35,7 +35,7 @@ export default function formatResource(data, searchType) {
 
         case "playlists":
 
-        const formatedTracks = data.tracks.items.map(track => {
+            const formatedTracks = data.tracks.items.map(track => {
                 return {
                     name: track.track.name,
                     preview_url: track.track.preview_url,
@@ -58,7 +58,7 @@ export default function formatResource(data, searchType) {
         case "users":
 
             formatedResource.name = data.display_name
-            formatedResource.owner = `Followers: ${data.followers.total}`
+            formatedResource.owner = `${data.followers.total}`
             formatedResource.image = data.images[data.images.length - 1].url || "https://i.scdn.co/image/ab6761610000e5eb55d39ab9c21d506aa52f7021"
             formatedResource.tracks = []
             formatedResource.url = data.external_urls.spotify
@@ -69,7 +69,7 @@ export default function formatResource(data, searchType) {
         case "artists":
 
             formatedResource.name = data.name
-            formatedResource.owner = `Popularity: ${data.popularity}`
+            formatedResource.owner = `${data.popularity}`
             formatedResource.image = data.images[data.images.length - 1].url
             formatedResource.tracks = []
             formatedResource.url = data.external_urls.spotify

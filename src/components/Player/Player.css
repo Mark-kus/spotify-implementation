@@ -6,14 +6,21 @@
   width: 390px;
 }
 
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
 .genre {
   position: relative;
   top: 2px;
   background-color: rgb(14, 18, 59);
   border-radius: 14px;
   padding: 2px 8px;
-  margin-right: 6px;
+  margin: 2px 6px 0 0;
   font-size: xx-small;
+  line-height: normal;
 }
 
 /* Resource data, such as name and images */
@@ -28,7 +35,7 @@
   -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
   width: 20%;
-  max-width: 75px;
+  max-width: 80px;
   height: auto;
   border-radius: 9px;
 }
