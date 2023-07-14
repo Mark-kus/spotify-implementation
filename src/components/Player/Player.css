@@ -1,9 +1,11 @@
 .container {
-  background-color: rgb(41, 44, 70);
+  background-color: var(--embed-background);
   border-radius: 9px;
 
   max-height: 140px;
   width: 390px;
+
+  position: relative;
 }
 
 .genres {
