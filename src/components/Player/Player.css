@@ -25,9 +25,15 @@
 
 .resource-logo {
   margin: 16px;
-
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
   width: 22%;
   border-radius: 9px;
+}
+
+.resource-logo:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .spotify-logo {
