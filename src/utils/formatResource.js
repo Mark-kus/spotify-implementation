@@ -10,7 +10,7 @@ export default function formatResource(data, searchType) {
         type: null,
         genres: [],
     }
-console.log(data);
+
     // Each type gives us the data in different ways
     switch (searchType) {
         case "tracks":
