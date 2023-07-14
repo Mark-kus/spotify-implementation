@@ -45,7 +45,7 @@
 .resource-card {
   position: relative;
   display: flex;
-  line-height: 0.25;
+  line-height: 0.5;
   font-size: small;
 }
 
@@ -87,11 +87,20 @@
   display: flex;
   flex-direction: column;
 
-  overflow: scroll;
+  overflow: auto;
   max-height: 100%;
   border-radius: 0 0 9px 9px;
 
   overflow-x: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.5);
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .track-container {
@@ -99,6 +108,10 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+}
+
+.track-container:hover {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .track-container>p {
@@ -113,6 +126,7 @@
 }
 
 .track-info {
+  color: white;
   line-height: 0;
   width: 100%;
 }
