@@ -44,3 +44,7 @@
     background-color: black;
     transition: width linear;
 }
+
+.button:hover {
+    cursor: pointer;
+}
