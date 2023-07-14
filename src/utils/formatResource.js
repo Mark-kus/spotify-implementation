@@ -20,7 +20,8 @@ export default function formatResource(data, searchType) {
                 preview_url: data.preview_url,
                 author: data.artists.map(artist => {
                     return artist.name
-                })
+                }),
+                time: data.duration_ms
             }
 
             formatedResource.name = data.name
@@ -40,7 +41,8 @@ export default function formatResource(data, searchType) {
                     preview_url: track.track.preview_url,
                     author: track.track.artists.map(artist => {
                         return artist.name
-                    })
+                    }),
+                    time: track.track.duration_ms
                 }
             })
 
@@ -56,7 +58,7 @@ export default function formatResource(data, searchType) {
         case "users":
 
             formatedResource.name = data.display_name
-            formatedResource.owner = `Follows: ${data.followers}`
+            formatedResource.owner = `Followers: ${data.followers.total}`
             formatedResource.image = data.images[data.images.length - 1].url || "https://i.scdn.co/image/ab6761610000e5eb55d39ab9c21d506aa52f7021"
             formatedResource.tracks = []
             formatedResource.url = data.external_urls.spotify

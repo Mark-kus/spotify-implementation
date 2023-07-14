@@ -30,11 +30,10 @@ export default async function getResource(input, token) {
         Authorization: `Bearer ${token}`
       }})
     const response2 = await data2.json()
-    console.log("response", response2);
+
     // So, we now get to fetch the data
     const response = await fetch(`https://api.spotify.com/v1/${searchType}/${searchId}`, searchParameters)
     const data = await response.json()
-    console.log(data);
 
     // Return only the data we are going to use
     return formatResource(data, searchType)

@@ -1,8 +1,8 @@
 import "./Player.css"
 import PlayerControl from "../PlayerControl/PlayerControl";
+import msConverter from "../../utils/msConverter";
 
 export default function Player({ resource }) {
-    console.log(resource);
     return (
         <div className="container">
 
@@ -12,8 +12,9 @@ export default function Player({ resource }) {
                     <a className="link-to" href={resource.url}><h2>{resource.name}</h2></a>
                     <p className="mute">{resource.owner}</p>
                     {resource.genres.map((genre, i) => {
+                        const shownGenre = genre.slice(0, 1).toUpperCase() + genre.slice(1)
                         return (
-                            <span key={i} className="genre mute">{genre}</span>
+                            <span key={i} className="genre mute">{shownGenre}</span>
                         )
                     })}
                 </div>
@@ -34,6 +35,7 @@ export default function Player({ resource }) {
             {resource.tracks.length > 1 &&
                 <div className="track-list">
                     {resource.tracks.map((track, i) => {
+                        const showTime = msConverter(track.time)
                         return (
                             <div className="track-container" key={i}>
                                 <p className="mute">{i + 1}</p>
@@ -41,6 +43,7 @@ export default function Player({ resource }) {
                                     <p>{track.name}</p>
                                     <p className="mute">{track.author.join(", ")}</p>
                                 </div>
+                                <p className="mute track-time">{showTime}</p>
                             </ div>
                         )
                     })}
