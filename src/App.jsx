@@ -42,14 +42,8 @@ function App() {
   return (
     <>
       <div className='main-container'>
-          <iframe style={{ "border-radius": "12px" }} src="https://open.spotify.com/embed/playlist/7tmqxXppNtc5XvWsBHUcFA?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-        <div>
-          {resource?.name ?
-            <Player resource={resource} />
-            : null}
-        </div> <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login
+        <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login
           to Spotify</a>
-
         <div key={1} className='embedSpotify'>
           <input
             placeholder='Coloca aquí el link'
@@ -63,6 +57,11 @@ function App() {
             }
           />
         </div>
+        <div>
+          {resource?.name ?
+            <Player resource={resource} />
+            : null}
+        </div> 
       </div>
     </>
   )

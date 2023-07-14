@@ -8,7 +8,7 @@ export default function Player({ resource }) {
 
             <div className="resource-card">
                 <img src={resource.image} alt="Imagen de portada del recurso" width={156} className="resource-logo" />
-                <div>
+                <div className="top-card">
                     <a className="link-to" href={resource.url}><h2>{resource.name}</h2></a>
                     <p className="mute">{resource.owner}</p>
                     {resource.genres.map((genre, i) => {
