@@ -4,7 +4,6 @@ import msConverter from "../../utils/msConverter";
 import FollowButton from "../FollowButton/FollowButton";
 
 export default function Player({ resource }) {
-    console.log(Number(resource.owner));
     return (
         <>
             <div className="resource-card">
