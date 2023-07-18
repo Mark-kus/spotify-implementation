@@ -1,13 +1,3 @@
-.container {
-  background-color: var(--embed-background);
-  border-radius: 9px;
-
-  max-height: 140px;
-  width: 390px;
-
-  position: relative;
-}
-
 .genres {
   display: flex;
   flex-wrap: wrap;
@@ -20,7 +10,7 @@
   background-color: rgb(14, 18, 59);
   border-radius: 14px;
   padding: 2px 8px;
-  margin: 2px 6px 0 0;
+  margin: 2px 3px 0 0;
   font-size: xx-small;
   line-height: normal;
 }
@@ -72,8 +62,14 @@
   align-items: flex-start;
 }
 
-.top-card > a > h2 {
-  line-height: 0.9;
+.top-card-profile {
+  width: 55%;
+  line-height: 0.75;
+}
+
+.top-card > a > h3 {
+  line-height: 1;
+  width: 210px;
 }
 
 .controls {
@@ -109,7 +105,7 @@
   flex-direction: column;
 
   overflow: auto;
-  max-height: 100%;
+  max-height: 130px;
   border-radius: 0 0 9px 9px;
 
   overflow-x: hidden;

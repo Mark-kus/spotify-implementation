@@ -8,8 +8,8 @@ export default function Player({ resource }) {
         <>
             <div className="resource-card">
                 <img src={resource.image} alt="Imagen de portada del recurso" width={156} className="resource-logo" />
-                <div className="top-card">
-                    <a className="link-to" href={resource.url}><h2 className="margin-no">{resource.name}</h2></a>
+                <div className={isNaN(Number(resource.owner)) ? "top-card" : "top-card-profile"}>
+                    <a className="link-to" href={resource.url}><h3 className="margin-no">{resource.name}</h3></a>
                     {isNaN(Number(resource.owner)) ? <p className="mute margin-no">{resource.owner}</p> : <FollowButton href={resource.url} qty={resource.owner} />}
                     <div className="genres">
                         {resource.genres.map((genre, i) => {
