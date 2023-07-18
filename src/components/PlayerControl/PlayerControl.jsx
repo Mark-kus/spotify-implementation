@@ -33,7 +33,7 @@ export default function PlayerControl({ tracks }) {
             music.pause()
             clearInterval(intervalId.current)
             setIsPlaying(false)
-        } else {
+        } else if (controlAvailable.playable) {
             // Plays music and starts interval
             music.play()
             intervalId.current = createBarInterval(music)
