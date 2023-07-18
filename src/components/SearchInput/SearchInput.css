@@ -1,0 +1,22 @@
+.embedSpotify {
+    background-color: var(--input-background);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border: 1px solid #2f2f2f;
+    border-radius: 9px;
+    flex-direction: column;
+    height: 140px;
+    width: 390px;
+}
+
+.input-spotify-link {
+    color: #2f2f2f;
+    background-color: #fafafa;
+    padding: 10px;
+    border: 0;
+    border-radius: 9px;
+    z-index: 2;
+    max-height: 140px;
+    width: 350px;
+}

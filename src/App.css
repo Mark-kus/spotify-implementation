@@ -1,28 +1,4 @@
-.embedSpotify {
-  background-color: var(--input-background);
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  border: 1px solid #2f2f2f;
-  border-radius: 9px;
-  flex-direction: column;
-  height: 140px;
-  width: 390px;
-}
-
-.input-spotify-link {
-  color: #2f2f2f;
-  background-color: #fafafa;
-  padding: 10px;
-  border: 0;
-  border-radius: 9px;
-  z-index: 2;
-  max-height: 140px;
-  width: 350px;
-}
-
-/* ----------------------- */
-.container {
+.container, .main-container {
   background-color: var(--embed-background);
   border-radius: 9px;
 
@@ -30,28 +6,4 @@
   width: 390px;
 
   position: relative;
-}
-
-.main-container>div {
-  display: flex;
-}
-
-.curtain {
-  z-index: 100;
-  background-color: var(--curtain-background);
-  position: absolute;
-  top: 0px;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  border-radius: 9px;
-}
-
-.curtain>a {
-  text-decoration: none;
-  color: white;
-  background-color: rgba(0, 199, 70, 0.9);
-  padding: 2px 6px;
-  border-radius: 9px;
 }
