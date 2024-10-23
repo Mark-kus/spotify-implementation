@@ -11,7 +11,8 @@ export default function Curtain({refreshToken, code}) {
         <>
             {refreshToken || code ? null
                 : <div className='curtain'>
-                    <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify</a>
+                    <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}`}>Login to Spotify to use the app!
+                    </a>
                 </div>
             }
         </>

@@ -36,15 +36,9 @@
   height: auto;
 }
 
-.resource-logo:hover {
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
 .spotify-logo {
   position: absolute;
   top: 16px;
-  right: 16px;
 }
 
 .resource-card {
@@ -73,7 +67,7 @@
 }
 
 .controls {
-  margin: 0 0 0 auto;
+  margin: 0 16px 0 auto;
 
   display: flex;
   flex-direction: column;
@@ -84,7 +78,6 @@
 .controles-musicales {
   position: absolute;
   bottom: 16px;
-  right: 16px;
 }
 
 .link-to {
@@ -109,15 +102,6 @@
   border-radius: 0 0 9px 9px;
 
   overflow-x: hidden;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.5);
-  width: 4px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
 }
 
 .track-container {
@@ -159,4 +143,33 @@
 .mute {
   color: rgba(255, 255, 255, 0.6);
   font-weight: 500;
+}
+
+#button-clear {
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom scrollbar styles */
+.track-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.track-list::-webkit-scrollbar-track {
+  background: rgb(41, 44, 70);
+  border-radius: 0 0 9px 9px;
+}
+
+.track-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+.track-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
 }

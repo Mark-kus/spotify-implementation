@@ -30,12 +30,12 @@
 .backProgressBar,
 .frontProgressBar {
     color: transparent;
-    height: 8px;
+    height: 5px;
     border-radius: 16px;
 }
 
 .backProgressBar {
-    background-color: gray;
+    background-color: white;
 
     position: absolute;
     width: 100%;
@@ -49,4 +49,12 @@
 
 .button:hover {
     cursor: pointer;
+}
+
+#track-info {
+    color:white;
+    text-wrap: nowrap;
+    position: absolute;
+    bottom: 20px;
+    font-size: xx-small;
 }

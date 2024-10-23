@@ -13,7 +13,7 @@ export default function SearchInput({ search, loading }) {
             </svg>
 
             <input
-                placeholder='Coloca aquí el link'
+                placeholder='Coloca aquí un link de Spotify para buscarlo'
                 className='input-spotify-link'
                 disabled={loading}
                 onKeyDown={(e) => { if (e.key === "Enter" && e.target.value.length > 0) search(e) }}

@@ -2,18 +2,34 @@
     z-index: 100;
     background-color: var(--curtain-background);
     position: absolute;
-    top: 0px;
+    top: 0;
     display: flex;
     justify-content: center;
+    align-items: center; /* Center content vertically */
     width: 100%;
     height: 100%;
     border-radius: 9px;
+    transition: opacity 0.3s ease-in-out; /* Smooth transition */
+    opacity: 1; /* Ensure curtain is visible */
 }
 
-.curtain>a {
+.curtain.hidden {
+    opacity: 0; /* Hide curtain smoothly */
+    pointer-events: none; /* Prevent interaction when hidden */
+}
+
+.curtain > a {
     text-decoration: none;
     color: white;
     background-color: rgba(0, 199, 70, 0.9);
-    padding: 2px 6px;
+    padding: 8px 12px; /* Increase padding for better touch targets */
     border-radius: 9px;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+.curtain > a:hover,
+.curtain > a:focus {
+    background-color: rgba(0, 199, 70, 1); /* Slightly darker on hover/focus */
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(0, 199, 70, 0.5); /* Custom focus outline */
 }
